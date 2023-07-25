@@ -1,26 +1,26 @@
 {
 	"builds": [
 	  {
-		"src": "api/test.py",
+		"src": "./test.py",
 		"use": "@vercel/python"
 	  }
 	],
 	"routes": [
 	  {
 		"src": "/login",
-		"dest": "api/test.py"
+		"dest": "./test.py"
 	  },
 	  {
 		"src": "/register",
-		"dest": "api/test.py"
+		"dest": "./test.py"
 	  },
 	  {
 		"src": "/admin/sys",
-		"dest": "api/test.py"
+		"dest": "./test.py"
 	  },
 	  {
 		"src": "/",
-		"dest": "api/test.py"
+		"dest": "./test.py"
 	  }
 	]
   }
