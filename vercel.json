@@ -1,22 +1,26 @@
 {
-	"builds":[
-		{
-			"src":"api/test.py",
-			"use":"@vercel/python"
-		}
+	"builds": [
+	  {
+		"src": "api/test.py",
+		"use": "@vercel/python"
+	  }
 	],
 	"routes": [
-		{
-		  "src": "/login",
-		  "dest": "api/test.py"
-		},
-		{
-		  "src": "/register",
-		  "dest": "api/test.py"
-		},
-		{
-		  "src": "/",
-		  "dest": "api/test.py"
-		}
-	  ]
-}
+	  {
+		"src": "/login",
+		"dest": "api/test.py"
+	  },
+	  {
+		"src": "/register",
+		"dest": "api/test.py"
+	  },
+	  {
+		"src": "/admin/sys",
+		"dest": "api/test.py"
+	  },
+	  {
+		"src": "/",
+		"dest": "api/test.py"
+	  }
+	]
+  }
