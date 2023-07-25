@@ -6,21 +6,9 @@
 	  }
 	],
 	"routes": [
-	  {
-		"src": "/login",
-		"dest": "./test.py"
-	  },
-	  {
-		"src": "/register",
-		"dest": "./test.py"
-	  },
-	  {
-		"src": "/admin/sys",
-		"dest": "./test.py"
-	  },
-	  {
-		"src": "/",
-		"dest": "./test.py"
-	  }
+	  { "src": "/(.*)", "dest": "./test.py" },
+	  { "src": "/login", "dest": "./test.py" },
+	  { "src": "/register", "dest": "./test.py" },
+	  { "src": "/admin/sys", "dest": "./test.py" }
 	]
   }
