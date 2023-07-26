@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+{% block title %}Chat Bot{% endblock %}
+{% block content%}
+<div class="content">
+    <h1>ChatBot AI</h1>
+    <h3>Make history close to you with AI.</h3>
+</div>
+<div>
+    <div class="boxchat">
+        <div id="chatbox">
+          <p class="botText"><span>Hi! I'm Chatterbot.</span></p>
+        </div>
+        <div id="userInput">         
+          <input id="textInput" type="text" name="msg" placeholder="Message">
+          <button id="buttonInput">Send</button>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+          function getBotResponse() {
+            var rawText = $("#textInput").val();
+            var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+            $("#textInput").val("");
+            $("#chatbox").append(userHtml);
+            $("#chatbox").animate({ scrollTop: $("#chatbox").prop("scrollHeight") }, 500);
+            $.get("/get", { msg: rawText }).done(function(data) {
+              var botResponses = data.split("*");
+              for (var i = 0; i < botResponses.length; i++) {
+                var botHtml = '<p class="botText"><span>' + botResponses[i].trim() + '</span></p>';
+                $("#chatbox").append(botHtml);
+              }
+              $("#chatbox").animate({ scrollTop: $("#chatbox").prop("scrollHeight") }, 500);
+            });
+          }
+
+          $("#buttonInput").click(function() {
+            getBotResponse();
+          });
+
+          $("#textInput").keypress(function(e) {
+            if (e.which == 13) {
+              getBotResponse();
+            }
+          });
+        });
+    </script>
+</div>
+{%endblock%}

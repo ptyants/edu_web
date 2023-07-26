@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% block title %}Funfact{% endblock %}
+{% block content%}
+<div class="fact-container">
+    <div class="fact-info">
+        <h1>Fun Facts</h1>
+        <a href="/funfact/edit">Add your fact</a>
+        <ul>
+            {% if current_fact %}
+                <li> 
+                    <div class="fact-content">
+                        <div class="fact-text">
+                            <h2>{{ current_fact.fact_title }}</h2>
+                            <p style="text-align:justify">{{ current_fact.fact }}</p>
+                        </div>
+                        <div class="fact-image">
+                            <img src="{{ url_for('static', filename='uploads/' + current_fact.img_fact) }}" alt="Fun Fact Image">
+                        </div>
+                    </div>
+
+                    
+                    <!--h2>{{ current_fact.fact_title }}</h2>
+                    <p>{{ current_fact.fact }}</p>
+                    <div class="fact-image">
+                        <img src="{{ url_for('static', filename='uploads/' + current_fact.img_fact) }}" alt="Fun Fact Image">
+                    </div-->
+                </li>
+            {% else %}
+                <li>No fun facts available.</li>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+<div class="button-container">
+    <a href="/funfact?fact_index={{ prev_fact_index }}" class="button">Previous</a>
+    <a href="/funfact?fact_index={{ next_fact_index }}" class="button">Next</a>
+</div>
+{%endblock%}

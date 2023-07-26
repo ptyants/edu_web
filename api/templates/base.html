@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="{{url_for('static', filename = 'bashcss.css')}}">
+  
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{% block title %} {% endblock %}</title>
+  <link rel="icon" href="{{url_for('static', filename = 'ai_historialfix-removebg-preview.png')}}" type="image/icon type">
+	
+</head>
+<body>
+	<div class="background">
+	    <img id="logo" src="{{url_for('static', filename = 'AI Historial logo.png')}}" align="left" width="10%" >
+	
+	    <div class="container">
+		    <ul class="nav justify-content-center">
+			    <li class="nav-item">
+			    <a class="nav-link active" aria-current="page" href="/"><span style="color: black; background-color: rgba(255, 255, 255, {% if Dashboard %}1{% else %}0.8{% endif %}); padding:8px; border-radius: 30px">Dashboard</span></a>
+			    </li>
+			    <li class="nav-item">
+			    <a class="nav-link" href="/funfact"><span style="color: black; background-color: rgba(255, 255, 255, {% if funfactbutton %}1{% else %}0.8{% endif %}); padding:8px; border-radius: 30px">Fun fact</span></a>
+			    </li>
+			    <li class="nav-item">
+			    <a class="nav-link" href="/chatbot"><span style="color: black; background-color: rgba(255, 255, 255,{% if Chatbot %}1{% else %}0.8{% endif %}); padding:8px; border-radius: 30px">Chatbot</span></a>
+			    </li>
+		    </ul>
+		
+		    {% block content %}
+   			{% endblock %}
+	    </div>
+    </div>
+	{% block footer%}
+	{% endblock%}
+
+	
+</body>
+</html>

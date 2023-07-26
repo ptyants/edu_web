@@ -1,0 +1,62 @@
+{% extends 'base.html'%}
+{% block title %}Funfact edit{% endblock %}
+{% block content%}
+<div class="fact-container">
+    <div class="fact-info">
+        <h1>Fun Fact Form</h1>
+        <div class="fact-content-edit">
+            <form method="POST" action="/funfact/edit" enctype="multipart/form-data">
+                <div class="fact-text" style="content-right: 50px">
+                    <div class="input-group mb-3">
+                        <label for="fact_title">Fact title:</label>
+                        <input placeholder="Fact title" class="form-control" id="fact_title" type="text" name="fact_title" maxlength="100" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fact">Fun Fact:</label>
+                        <textarea placeholder="Fun Fact" class="form-control" id="fact" name="fact" rows="5" required></textarea>
+                    </div>
+                </div>
+            
+
+                <div class="fact-image">
+                    <label for="image">Image:</label>
+                    <input type="file" name="image" id="image" accept="image/*" required onchange="validateFile()">
+                </div>     
+                        
+                <div class="fact-image">  
+                    <img id="preview-image" src="#">
+                </div> 
+                <script>
+                    // Kiểm tra định dạng tệp tin khi có thay đổi
+                    function validateFile() {
+                        var fileInput = document.getElementById("image");
+                        var file = fileInput.files[0];
+                        var fileExtension = file.name.split('.').pop().toLowerCase();
+                        var allowedExtensions = ["jpg", "jpeg", "png", "gif", "jfif"];
+                        if (!allowedExtensions.includes(fileExtension)) {
+                            fileInput.value = ""; // Xóa giá trị tệp tin đã chọn
+                            alert("Invalid file format. Please choose an image file.");
+                        }
+                    }
+                                
+                    function previewImage(event) {
+                        var reader = new FileReader();
+                        reader.onload = function() {
+                            var imgElement = document.getElementById("preview-image");
+                            imgElement.src = reader.result;
+                            imgElement.style.display = "block";
+                        };
+                        reader.readAsDataURL(event.target.files[0]);
+                    }
+                                
+                    // Liên kết sự kiện onchange với hộp chọn hình ảnh
+                    var imageInput = document.getElementById("image");
+                    imageInput.addEventListener("change", previewImage);
+
+                </script>
+                <button type="submit">Add Fun Fact</button>
+            </form>      
+        </div>    
+    </div>
+</div>
+{% endblock %}

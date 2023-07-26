@@ -1,0 +1,246 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/*html{
+    background: rgba(178, 152, 22, 0.596);
+    opacity: 0.9;
+    background-size: cover;
+}*/
+
+html {
+    height: 100%;
+}
+ 
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+.background{
+    height: 100%;
+    background-image: url("https://img5.thuthuatphanmem.vn/uploads/2021/11/18/background-cuoc-chien-lich-su_100151851.jpg");
+    background-size: cover;
+    background-position: top;
+}
+#logo{
+    /*background-size: contain;
+    background-clip: content-box;*/
+    
+    margin-top: 0px;
+    border: 10px;
+    display: flex;
+    text-align: left;
+    position: fixed;
+
+}
+
+/*#logo{
+    width: 50px;
+    padding-left: 3%;
+    margin-top: 0px;
+    border: 10px;
+    display: flex;
+    
+    text-align: left;
+}*/
+
+.container {
+    /*background-image: url("https://img5.thuthuatphanmem.vn/uploads/2021/11/18/background-cuoc-chien-lich-su_100151851.jpg");
+    background-size: cover;
+    background-position: top;*/
+    padding: 20px;
+}
+
+.mid {
+    text-align: center;
+    padding: 2% 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 30px;
+    margin-top: 50px;
+    font-size:85%
+}
+.content{
+
+  text-align: center;
+  border-radius: 30px;
+  max-width: max-content;
+  padding: 0% 3%;
+  margin-top: 1%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+
+}
+
+#footer {
+    text-align: center;
+    font-weight: 700;
+    background-color: #bdc3c7;
+    line-height: 40px;
+}
+
+/* below is the element of the chat box*/
+.boxchat {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px;
+    max-width: 90%;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: auto;
+    height: 70vh;
+    scrollbar-width: thin;
+    margin-top: 20px;
+    /*margin-bottom: auto;*/
+  }
+
+  .userText {
+    text-align: right;
+    margin-bottom: 10px;
+  }
+
+  .botText {
+    text-align: left;
+    margin-bottom: 10px;
+    
+  }
+
+  #userInput {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  #textInput {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  #buttonInput {
+    margin-left: 10px;
+    padding: 8px 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+/* below is the element of the funfact */
+
+.fact-container {
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  overflow: hidden;
+
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 1%;
+  
+}
+
+
+
+/* Kiểu dáng cho phần thông tin fact (bên trái) */
+.fact-info {
+  flex: 1;
+  padding: 20px;
+  margin-top: 1%;
+}
+
+/* Kiểu dáng cho tiêu đề và nội dung fact */
+.fact-info h2 {
+  color: #333;
+  font-size: 24px;
+}
+
+
+
+.fact-info p {
+  color: #666;
+  font-size: 16px;
+}
+
+.fact-content {
+  display: flex;
+  /*margin-top: 0.2%;*/
+  align-items: center;
+}
+
+.fact-text {
+  flex: 1;
+}
+
+
+
+/* Kiểu dáng cho hình ảnh fact (bên phải) */
+.fact-image {
+  /*flex: 1;
+  text-align: center;
+  padding: 20px;*/
+  
+  
+  margin-left: 20px;
+}
+
+.fact-image img {
+  /*max-width: 100%;
+  border-radius: 10px;*/
+
+  width: 200px; /* Kích thước hình ảnh */
+  height: 200px; /* Kích thước hình ảnh */
+  object-fit: contain; /* Căn chỉnh hình ảnh */
+  margin-bottom: 5px;
+}
+
+/* Kiểu dáng cho container chứa nút Previous và Next */
+.button-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+#button_submit_fact_edit{
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.fact-content-edit {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+
+  
+}
+
+
+#preview-image{
+  margin-top: 10px;
+
+}
+
+
+
+
