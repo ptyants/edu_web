@@ -7,8 +7,8 @@
 	  }
 	],
 	"env": {
-	  "_BARD_API_KEY": "your_bard_api_key_here",
-	  "SECRET_KEY": "your_flask_secret_key_here",
+	  "bard_api_key": "YAhweL-TB02BIuIt3w7DiJKmQu2oHGwZdJOrtdjuXvbTqVa4dg0DdlJSDf2aOvmd1DX2qA.",
+	  "SECRET_KEY": "Key-chốnghacker-TB02BIuIt3w7DiJKmQu2oHGwZdJOrtdjuXvbTqVa4dg0DdlJSDf2aOvmd1DX2qA.",
 	  "SQLALCHEMY_DATABASE_URI": "sqlite:///fact.db",
 	  "UPLOAD_FOLDER": "static/uploads",
 	  "ALLOWED_EXTENSIONS": "png,jpg,jpeg,gif,jfif"
