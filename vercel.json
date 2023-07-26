@@ -1,14 +1,22 @@
 {
+	"version": 2,
 	"builds": [
 	  {
-		"src": "./test.py",
+		"src": "app.py",
 		"use": "@vercel/python"
 	  }
 	],
+	"env": {
+	  "_BARD_API_KEY": "your_bard_api_key_here",
+	  "SECRET_KEY": "your_flask_secret_key_here",
+	  "SQLALCHEMY_DATABASE_URI": "sqlite:///fact.db",
+	  "UPLOAD_FOLDER": "static/uploads",
+	  "ALLOWED_EXTENSIONS": "png,jpg,jpeg,gif,jfif"
+	},
 	"routes": [
-	  { "src": "/(.*)", "dest": "./test.py" },
-	  { "src": "/login", "dest": "./test.py" },
-	  { "src": "/register", "dest": "./test.py" },
-	  { "src": "/admin/sys", "dest": "./test.py" }
+	  {
+		"src": "/(.*)",
+		"dest": "/app.py"
+	  }
 	]
   }
